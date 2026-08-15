@@ -18,10 +18,13 @@ import org.jetbrains.compose.resources.painterResource
 
 import viewmodeltest2.shared.generated.resources.Res
 import viewmodeltest2.shared.generated.resources.compose_multiplatform
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Composable
 @Preview
-fun App() {
+fun App(
+    viewModel: OrderViewModel = viewModel{OrderViewModel()},
+) {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(
