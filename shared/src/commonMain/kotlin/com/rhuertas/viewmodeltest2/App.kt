@@ -34,7 +34,11 @@ fun App(
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Button(onClick = { showContent = !showContent }) {
+            Button(onClick = {
+                //showContent = !showContent
+                viewModel.setQuantity((1..10).random())
+
+            }) {
                 Text("Click me!")
             }
             AnimatedVisibility(showContent) {
@@ -47,6 +51,12 @@ fun App(
                     Text("Compose: $greeting")
                 }
             }
+            Text(
+                "Quantity: ${viewModel.uiState.collectAsState().value.quantity}"
+            )
+            Text(
+                "Price: ${viewModel.uiState.collectAsState().value.price}"
+            )
         }
     }
 }
