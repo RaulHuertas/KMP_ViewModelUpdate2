@@ -28,6 +28,8 @@ import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.koinConfiguration
 import org.koin.mp.KoinPlatform
 import org.koin.compose.viewmodel.koinViewModel
+import org.koin.dsl.KoinConfiguration
+import org.koin.core.context.KoinContext
 
 @Composable
 @Preview
@@ -38,6 +40,7 @@ fun App(
 
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
+
         Column(
             modifier = Modifier
                 .background(MaterialTheme.colorScheme.primaryContainer)
