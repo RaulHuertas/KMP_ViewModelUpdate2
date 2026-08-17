@@ -5,13 +5,14 @@ import org.koin.core.context.startKoin
 import org.koin.core.KoinApplication
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.includes
-
 public fun initKoin(config: KoinAppDeclaration? = null): KoinApplication {
-    return startKoin {
-        includes(config)
-        modules(
-            transactionsModule,
-        )
-    }
+    //if(GlobalContext.getOrNull() == null) {
+        return startKoin {
+            includes(config)
+            modules(
+                transactionsModule,
+            )
+        }
+    //}
 }
 
